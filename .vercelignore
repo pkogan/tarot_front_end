@@ -1,0 +1,23 @@
+# Local attempt fixtures.
+# Uploaded to Vercel Blob via `npm run ingest`; not needed in the deployed bundle.
+# NOTE: leading slash anchors to repo root so we don't also exclude src/lib/storage/.
+/storage/
+/skills/
+
+# Local-only ingest script (runs from your machine, not on Vercel).
+/scripts/
+
+# Build / tooling artifacts (Vercel rebuilds these fresh on each deploy).
+/.next/
+/.vercel/
+*.tsbuildinfo
+
+# Local env files (Vercel uses dashboard environment variables).
+.env*.local
+.env*.previous
+.env*.example
+
+# OS / editor noise.
+.DS_Store
+.vscode/
+.idea/

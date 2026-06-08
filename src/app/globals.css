@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Theme tokens. The `ink` scale is intentionally inverted between themes so
+ * that semantic usage stays the same: ink-950 is always the page background,
+ * ink-100 is always primary text, etc. Components do not need any changes
+ * to support both themes.
+ */
+:root {
+  /* Light theme (default) — inverted scale */
+  --ink-50: 10 12 16;
+  --ink-100: 19 22 27;
+  --ink-200: 34 38 45;
+  --ink-300: 54 60 71;
+  --ink-400: 100 109 124;
+  --ink-500: 138 147 161;
+  --ink-600: 179 186 196;
+  --ink-700: 214 218 224;
+  --ink-800: 226 230 235;
+  --ink-900: 241 243 246;
+  --ink-950: 252 252 253;
+
+  --selection-bg: 200 210 224;
+  --selection-fg: 19 22 27;
+}
+
+.dark {
+  /* Dark theme — original ink scale */
+  --ink-50: 247 247 248;
+  --ink-100: 236 238 241;
+  --ink-200: 214 218 224;
+  --ink-300: 179 186 196;
+  --ink-400: 138 147 161;
+  --ink-500: 100 109 124;
+  --ink-600: 74 82 96;
+  --ink-700: 54 60 71;
+  --ink-800: 34 38 45;
+  --ink-900: 19 22 27;
+  --ink-950: 10 12 16;
+
+  --selection-bg: 74 82 96;
+  --selection-fg: 255 255 255;
+}
+
+html,
+body {
+  background: rgb(var(--ink-950));
+  color: rgb(var(--ink-100));
+}
+
+::selection {
+  background: rgb(var(--selection-bg));
+  color: rgb(var(--selection-fg));
+}
+
+/* Compact scrollbars for the file tree / code panes */
+.scroll-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: rgb(var(--ink-700));
+  border-radius: 4px;
+}
+.scroll-thin::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--ink-600));
+}
+
+/* Markdown */
+.prose-tara {
+  line-height: 1.65;
+}
+.prose-tara h1,
+.prose-tara h2,
+.prose-tara h3,
+.prose-tara h4 {
+  font-weight: 600;
+  margin-top: 1.25em;
+  margin-bottom: 0.5em;
+  color: rgb(var(--ink-50));
+}
+.prose-tara h1 {
+  font-size: 1.6rem;
+}
+.prose-tara h2 {
+  font-size: 1.3rem;
+}
+.prose-tara h3 {
+  font-size: 1.1rem;
+}
+.prose-tara p {
+  margin: 0.6em 0;
+  color: rgb(var(--ink-200));
+}
+.prose-tara a {
+  color: #2563eb;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.dark .prose-tara a {
+  color: #93c5fd;
+}
+.prose-tara code {
+  background: rgb(var(--ink-900));
+  border: 1px solid rgb(var(--ink-800));
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+.prose-tara pre {
+  background: rgb(var(--ink-900));
+  border: 1px solid rgb(var(--ink-800));
+  padding: 0.9em 1em;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.85em;
+}
+.prose-tara pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+.prose-tara ul {
+  list-style: disc;
+  padding-left: 1.25em;
+}
+.prose-tara ol {
+  list-style: decimal;
+  padding-left: 1.25em;
+}
+.prose-tara li {
+  margin: 0.25em 0;
+}
+.prose-tara table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 0.9em;
+}
+.prose-tara th,
+.prose-tara td {
+  border: 1px solid rgb(var(--ink-800));
+  padding: 0.4em 0.6em;
+  text-align: left;
+}
+.prose-tara th {
+  background: rgb(var(--ink-900));
+}
+.prose-tara blockquote {
+  border-left: 3px solid rgb(var(--ink-600));
+  padding-left: 0.9em;
+  color: rgb(var(--ink-300));
+  font-style: italic;
+}
